@@ -1,8 +1,19 @@
 # TypeDoc Namespace Bug
 
-Simple reproducable setup demonstrating re-exporting bug in TypeDoc. It highlights the issue of "variables" appearing as a heading for type re-exporting, when in-fact it is an interface.
+Simple reproducable setup demonstrating a re-exporting bug in TypeDoc. 
 
-https://github.com/MathBunny/typedoc-namespace-bug/blob/b6b33964153421ed96cfc88f75991e3e0a7a63c8/src/index.ts#L8-L14
+## Purpose
+Highlights the issue of "variables" appearing as a heading for type re-exporting, when in fact it is an interface. The complete source code can be found in `src`.
+
+```ts
+/**
+ * Sample namespace exported that leverages aliasing. 
+ */
+export namespace admin.subnamespace{
+  export import DemoInterface = demoInterfaceApi.DemoInterface; // DOES NOT WORK!
+  export interface DemoClass extends demoClassApi.DemoClass {}
+}
+```
 
 ## Getting started 
 ```
@@ -15,4 +26,5 @@ After, open the generated docs in the `docs` folder. You'll notice by going to t
 
 ![](https://i.imgur.com/DTKOX6z.png)
 
-
+## Related Pull Requests
+The [following](https://github.com/TypeStrong/typedoc/pull/1157) seems related but does not fully satisfy the issue. However, compared to TypeDoc `0.15.0` it is working much better because the re-export appears in the documentation unlike before.
