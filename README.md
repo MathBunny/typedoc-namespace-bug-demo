@@ -1,6 +1,6 @@
 # TypeDoc Namespace Bug
 
-Simple reproducable setup demonstrating a re-exporting bug in TypeDoc. 
+Simple reproducable setup demonstrating a [re-exporting bug](https://github.com/TypeStrong/typedoc/issues/1353) in TypeDoc. 
 
 ## Purpose
 Highlights the issue of "variables" appearing as a heading for type re-exporting, when in fact it is an interface. The complete source code can be found in `src`.
