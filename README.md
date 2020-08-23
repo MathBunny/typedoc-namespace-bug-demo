@@ -1,6 +1,6 @@
 # TypeDoc Namespace Bug
 
-Simple reproducable setup demonstrating a [re-exporting bug](https://github.com/TypeStrong/typedoc/issues/1353) in TypeDoc. 
+Simple reproducible setup demonstrating a [re-exporting bug](https://github.com/TypeStrong/typedoc/issues/1353) in TypeDoc. 
 
 ## Purpose
 Highlights the issue of "variables" appearing as a heading for type re-exporting, when in fact it is an interface. The complete source code can be found in `src`.
@@ -17,9 +17,7 @@ export namespace admin.subnamespace{
 
 ## Getting started 
 ```
-npm install
-npm run build
-npm run docs
+npm install && npm run build && npm run docs
 ```
 
 After, open the generated docs in the `docs` folder. You'll notice by going to the nested namespace the following:
